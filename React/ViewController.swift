@@ -7,12 +7,33 @@
 //
 
 import UIKit
+import PBJVision
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, PBJVisionDelegate {
+    
+    @IBOutlet weak var previewView: UIView!
+    @IBOutlet weak var capturedImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let previewLayer = PBJVision.sharedInstance().previewLayer
+        previewLayer.frame = previewView.bounds
+        previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+        previewView.layer.addSublayer(previewLayer)
+        
+        let vision = PBJVision.sharedInstance()
+        vision.delegate = self;
+        vision.cameraMode = .Photo
+        vision.cameraOrientation = .Portrait
+        vision.focusMode = .ContinuousAutoFocus
+        vision.outputFormat = .Square
+        vision.cameraDevice = .Front
+        
+        
+        vision.startPreview()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +41,22 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func onTap(sender: UITapGestureRecognizer) {
+        let vision = PBJVision.sharedInstance()
+        vision.capturePhoto()
+    
+    }
+    
+    func visionDidCapturePhoto(vision: PBJVision) {
+        vision.startPreview()
+    }
+    
+    
+    func vision(vision: PBJVision, capturedPhoto photoDict: [NSObject : AnyObject]?, error: NSError?) {
+        let imageData = photoDict![PBJVisionPhotoJPEGKey] as! NSData
+        
+        capturedImageView.image = UIImage(data: imageData)
+    }
 
 }
 

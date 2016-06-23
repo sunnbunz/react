@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00840FDA532B3652D7B7036A /* Pods_React.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81EA0FB67166F4A68F28214 /* Pods_React.framework */; };
 		F73252661D1357D700887DB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73252651D1357D700887DB2 /* AppDelegate.swift */; };
 		F73252681D1357D700887DB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73252671D1357D700887DB2 /* ViewController.swift */; };
 		F732526B1D1357D700887DB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73252691D1357D700887DB2 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A89A30162CBB7E508F735A7 /* Pods-React.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-React.debug.xcconfig"; path = "Pods/Target Support Files/Pods-React/Pods-React.debug.xcconfig"; sourceTree = "<group>"; };
+		585B71FD3E0617938D6B4BC8 /* Pods-React.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-React.release.xcconfig"; path = "Pods/Target Support Files/Pods-React/Pods-React.release.xcconfig"; sourceTree = "<group>"; };
+		E81EA0FB67166F4A68F28214 /* Pods_React.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_React.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F73252621D1357D700887DB2 /* React.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = React.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F73252651D1357D700887DB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F73252671D1357D700887DB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00840FDA532B3652D7B7036A /* Pods_React.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54BDEFA0A80FB01426CDA550 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E81EA0FB67166F4A68F28214 /* Pods_React.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6CC3E891D2F5BCA84FE4B237 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1A89A30162CBB7E508F735A7 /* Pods-React.debug.xcconfig */,
+				585B71FD3E0617938D6B4BC8 /* Pods-React.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F73252591D1357D700887DB2 = {
 			isa = PBXGroup;
 			children = (
 				F73252641D1357D700887DB2 /* React */,
 				F73252631D1357D700887DB2 /* Products */,
+				6CC3E891D2F5BCA84FE4B237 /* Pods */,
+				54BDEFA0A80FB01426CDA550 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F73252741D1357D700887DB2 /* Build configuration list for PBXNativeTarget "React" */;
 			buildPhases = (
+				EBF7C7D8E425B80097AA8BF7 /* [CP] Check Pods Manifest.lock */,
 				F732525E1D1357D700887DB2 /* Sources */,
 				F732525F1D1357D700887DB2 /* Frameworks */,
 				F73252601D1357D700887DB2 /* Resources */,
+				B024EA5F8BFD60C69A7AF73F /* [CP] Embed Pods Frameworks */,
+				B35347B396C811BF8C89C019 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +123,7 @@
 				TargetAttributes = {
 					F73252611D1357D700887DB2 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 3CKXCTE6SH;
 					};
 				};
 			};
@@ -129,6 +157,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B024EA5F8BFD60C69A7AF73F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-React/Pods-React-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B35347B396C811BF8C89C019 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-React/Pods-React-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBF7C7D8E425B80097AA8BF7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F732525E1D1357D700887DB2 /* Sources */ = {
@@ -247,23 +323,31 @@
 		};
 		F73252751D1357D700887DB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A89A30162CBB7E508F735A7 /* Pods-React.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = React/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = come.moeedm.React;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		F73252761D1357D700887DB2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 585B71FD3E0617938D6B4BC8 /* Pods-React.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = React/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = come.moeedm.React;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -286,6 +370,7 @@
 				F73252761D1357D700887DB2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
