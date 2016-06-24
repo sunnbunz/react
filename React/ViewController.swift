@@ -9,14 +9,17 @@
 import UIKit
 import PBJVision
 
-class ViewController: UIViewController, PBJVisionDelegate {
+class ViewController: UIViewController, UIScrollViewDelegate, PBJVisionDelegate {
     
     @IBOutlet weak var previewView: UIView!
-    @IBOutlet weak var capturedImageView: UIImageView!
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        scrollView.contentSize = CGSize(width: 375, height: 500)
+        scrollView.delegate = self
         
         let previewLayer = PBJVision.sharedInstance().previewLayer
         previewLayer.frame = previewView.bounds
@@ -47,16 +50,16 @@ class ViewController: UIViewController, PBJVisionDelegate {
     
     }
     
-    func visionDidCapturePhoto(vision: PBJVision) {
-        vision.startPreview()
-    }
+//    func visionDidCapturePhoto(vision: PBJVision) {
+//        vision.startPreview()
+//    }
     
     
-    func vision(vision: PBJVision, capturedPhoto photoDict: [NSObject : AnyObject]?, error: NSError?) {
-        let imageData = photoDict![PBJVisionPhotoJPEGKey] as! NSData
-        
-        capturedImageView.image = UIImage(data: imageData)
-    }
+//    func vision(vision: PBJVision, capturedPhoto photoDict: [NSObject : AnyObject]?, error: NSError?) {
+//        let imageData = photoDict![PBJVisionPhotoJPEGKey] as! NSData
+//        
+//        capturedImageView.image = UIImage(data: imageData)
+//    }
 
 }
 
